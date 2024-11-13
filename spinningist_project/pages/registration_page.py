@@ -26,4 +26,8 @@ class RegistrationPage:
         browser.element('[class="col-md-12"]').should(have.text('Добро пожаловать в раздел пользователя'))
 
 
+    def should_have_text_unregistered_user(self):
+        browser.element('[class="popupContent"]').should(have.text('Неправильный логин или пароль!'))
+
+
 registration_page = RegistrationPage()
