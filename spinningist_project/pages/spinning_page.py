@@ -1,6 +1,10 @@
+from utilites.logger import Logger
+
 from selenium.webdriver import ActionChains, Keys
 from selene import browser, have, be
 from selene.core import command
+
+from utilites.logger import Logger
 
 
 class SpinningPage:
@@ -44,6 +48,7 @@ class SpinningPage:
             have.text('Удилище спин. Maximus Winner-X 24L 2,4m 3-15g'))
 
     def choose_spinning(self):
+        Logger.add_start_step(method='select_spinning')
         self.spinning_section()
         self.select_spinning_brand()
         self.select_spinning_class()
@@ -53,6 +58,7 @@ class SpinningPage:
         self.click_buttom_find()
         self.page_should_have_text()
         self.select_spinning()
+        Logger.add_end_step(url=browser.driver.current_url, method='select_spinning')
 
 
 spinning_page = SpinningPage()
