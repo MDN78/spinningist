@@ -1,6 +1,6 @@
 from selene import browser, have, be
 
-class RegistrationPage():
+class RegistrationPage:
 
     def open(self):
         browser.open('https://spinningist.ru/members')
