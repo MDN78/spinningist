@@ -11,13 +11,6 @@ from selene import browser
 def load_env():
     load_dotenv()
 
-# @pytest.fixture(scope="function", autouse=False)
-# def driver_configuration():
-#     browser.config.window_width = 1920
-#     browser.config.window_height = 1080
-#     browser.config.base_url = "https://spinningist.ru"
-#     yield
-#     browser.quit()
 
 @pytest.fixture(scope="function", autouse=True)
 def auth_driver_configuration():
@@ -34,7 +27,6 @@ def auth_driver_configuration():
     }
     browser.open('/')
     browser.driver.add_cookie(cookie)
-
 
     yield
     browser.quit()

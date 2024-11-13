@@ -23,10 +23,21 @@ class SpinningPage:
     def select_max_price(self):
         # price = browser.element('[class="cmallFilter__rangeSlider_price_to form-control b-cmall-eshop-filter-spec-cf__item-text b-cmall-eshop-filter-spec-cf__item-text-to"]').send_keys(Keys.BACKSPACE * 6)
         # price.send_keys('12000')
-        browser.element('[class="cmallFilter__rangeSlider_price_to form-control b-cmall-eshop-filter-spec-cf__item-text b-cmall-eshop-filter-spec-cf__item-text-to"]').perform(command.js.set_value('12000'))
+        browser.element(
+            '[class="cmallFilter__rangeSlider_price_to form-control b-cmall-eshop-filter-spec-cf__item-text b-cmall-eshop-filter-spec-cf__item-text-to"]').perform(
+            command.js.set_value('12000')).click()
 
     def set_count_sections(self):
         browser.element('[id="checkbox_spec_eshop_filter_001003112ext_custom_77[]_3"]').click()
 
     def click_buttom_find(self):
         browser.element('[class="btn btn-black b-cmall-filter_form-field_submit__next-btn"]').click()
+
+    def page_should_have_text(self):
+        browser.element('[class="eshop-item-list__search-result 123"]').should(have.text('Найдено товаров'))
+
+    def select_spinning(self):
+        browser.element('[title="Удилище спин. Maximus Winner-X 24L 2,4m 3-15g"]').click()
+
+    def should_have_text_selected_spinning(self):
+        browser.element('[class="b-cmall-eshop-itemD-detail__item-name"]').should(have.text('Удилище спин. Maximus Winner-X 24L 2,4m 3-15g'))

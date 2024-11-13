@@ -13,3 +13,12 @@ class RegistrationPage:
 
     def submit(self):
         browser.element('[class="btn btn-black pull-right"]').click()
+
+    def registration(self, login, password):
+        self.fill_login(login)
+        self.fill_password(password)
+        self.submit()
+
+
+    def should_have_registered_user(self):
+        browser.element('[class="col-md-12"]').should(have.text('Добро пожаловать в раздел пользователя'))
