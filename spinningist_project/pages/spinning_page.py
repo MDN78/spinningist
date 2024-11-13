@@ -40,4 +40,19 @@ class SpinningPage:
         browser.element('[title="Удилище спин. Maximus Winner-X 24L 2,4m 3-15g"]').click()
 
     def should_have_text_selected_spinning(self):
-        browser.element('[class="b-cmall-eshop-itemD-detail__item-name"]').should(have.text('Удилище спин. Maximus Winner-X 24L 2,4m 3-15g'))
+        browser.element('[class="b-cmall-eshop-itemD-detail__item-name"]').should(
+            have.text('Удилище спин. Maximus Winner-X 24L 2,4m 3-15g'))
+
+    def choose_spinning(self):
+        self.spinning_section()
+        self.select_spinning_brand()
+        self.select_spinning_class()
+        self.select_spinning_type()
+        self.select_max_price()
+        self.set_count_sections()
+        self.click_buttom_find()
+        self.page_should_have_text()
+        self.select_spinning()
+
+
+spinning_page = SpinningPage()

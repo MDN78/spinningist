@@ -1,5 +1,6 @@
 from selene import browser, have, be
 
+
 class RegistrationPage:
 
     def open(self):
@@ -19,6 +20,8 @@ class RegistrationPage:
         self.fill_password(password)
         self.submit()
 
-
     def should_have_registered_user(self):
         browser.element('[class="col-md-12"]').should(have.text('Добро пожаловать в раздел пользователя'))
+
+
+registration_page = RegistrationPage()

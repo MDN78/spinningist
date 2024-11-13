@@ -1,11 +1,10 @@
 import os
-from spinningist_project.pages.registration_page import RegistrationPage
+from spinningist_project.pages.registration_page import registration_page
 
 
 def test_auth():
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
-    registration_page = RegistrationPage()
     registration_page.open()
     registration_page.registration(login, password)
     registration_page.should_have_registered_user()

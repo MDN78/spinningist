@@ -1,10 +1,9 @@
-from pickle import FALSE
-from selenium import webdriver
-from dotenv import load_dotenv
-import allure
 import os
 import pytest
+import allure
 from selene import browser
+from selenium import webdriver
+from dotenv import load_dotenv
 
 
 @pytest.fixture(scope='session', autouse=True)
@@ -29,4 +28,5 @@ def auth_driver_configuration():
     browser.driver.add_cookie(cookie)
 
     yield
+
     browser.quit()
