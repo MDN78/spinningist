@@ -4,6 +4,7 @@ import pytest
 from selene import browser
 from selenium import webdriver
 from dotenv import load_dotenv
+from utilites import attach
 
 
 @pytest.fixture(scope='session', autouse=True)
@@ -22,4 +23,17 @@ def driver_configuration():
 
     yield
 
-    browser.quit()
+    with allure.step('Add screenshot'):
+        attach.add_screenshot(browser)
+
+    with allure.step('Add logs'):
+        attach.add_logs(browser)
+
+    with allure.step('Add html'):
+        attach.add_html(browser)
+    #
+    # with allure.step('Add video'):
+    #     attach.add_video(browser)
+
+    with allure.step('Close driver'):
+        browser.quit()

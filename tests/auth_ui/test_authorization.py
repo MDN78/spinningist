@@ -1,7 +1,9 @@
 import os
+import allure
 from spinningist_project.pages.registration_page import registration_page
 
 
+@allure.tag('Spinningist')
 def test_authorization_registered_user():
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
