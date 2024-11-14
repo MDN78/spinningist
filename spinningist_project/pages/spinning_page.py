@@ -47,6 +47,17 @@ class SpinningPage:
         browser.element('[class="b-cmall-eshop-itemD-detail__item-name"]').should(
             have.text('Удилище спин. Maximus Winner-X 24L 2,4m 3-15g'))
 
+
+    def add_to_cart(self):
+        browser.element('[class="fa fa-shopping-cart eshop-item-small__cart-text"]').click()
+
+    def got_to_cart(self):
+        browser.element('[class="btn btn-primary modal-cart-order-btn b-cmall-eshop-cart-added-modal__footer-button-order"]').click()
+
+    def should_have_text_cart(self):
+        browser.element('[class="b-cmall-page-name__order"]').should(have.text('Оформление заказа'))
+
+
     def choose_spinning(self):
         Logger.add_start_step(method='select_spinning')
         self.spinning_section()
@@ -59,6 +70,13 @@ class SpinningPage:
         self.page_should_have_text()
         self.select_spinning()
         Logger.add_end_step(url=browser.driver.current_url, method='select_spinning')
+
+    def add_spinning_to_cart(self):
+        Logger.add_start_step(method='add spinning to cart')
+        self.choose_spinning()
+        self.add_to_cart()
+        self.got_to_cart()
+        Logger.add_end_step(url=browser.driver.current_url, method='add spinning to cart')
 
 
 spinning_page = SpinningPage()
