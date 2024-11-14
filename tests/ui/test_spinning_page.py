@@ -11,3 +11,6 @@ def test_add_spinning_to_cart():
     spinning_page.open()
     spinning_page.add_spinning_to_cart()
     spinning_page.should_have_text_cart()
+
+
+
