@@ -1,9 +1,8 @@
 import time
-
 from selene import browser, have, be
 from spinningist_project.data.user_info import User
-from spinningist_project.pages.spinning_page import spinning_page
-# from spinningist_project.data import user_info
+
+
 
 class CartPage:
 
@@ -21,8 +20,6 @@ class CartPage:
 
     def select_payment_type(self):
         browser.element('[id="naturalPaymentMethods"]').click()
-        # browser.element('[value="paymentformstub2"]').submit()
-
         browser.all("[value^=paymentformstub][data-ami-payment-method='stub2']").element_by(
             have.exact_text('Банковская карта')
         ).click()
