@@ -1,6 +1,7 @@
 from selene import browser, have, be
 from spinningist_project.data.user_info import User
-
+from spinningist_project.pages.spinning_page import spinning_page
+# from spinningist_project.data import user_info
 
 class CartPage:
 
@@ -23,6 +24,12 @@ class CartPage:
         browser.all("[value^=paymentformstub][data-ami-payment-method='stub2']").element_by(
             have.exact_text('Банковская карта')
         ).click()
+
+    def create_order(self, user: User):
+        self.input_name(user.name)
+        self.input_email(user.email)
+        self.input_phone(user.phone)
+        self.select_payment_type()
 
 
 cart_page = CartPage()
