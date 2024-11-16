@@ -1,3 +1,5 @@
+import time
+
 from selene import browser, have, be
 from spinningist_project.data.user_info import User
 from spinningist_project.pages.spinning_page import spinning_page
@@ -9,7 +11,7 @@ class CartPage:
         browser.open('https://spinningist.ru/members/order')
 
     def input_name(self, user: User):
-        browser.element('[type="text"]').clear().send_keys(user.name)
+        browser.element('[name="firstname"]').clear().send_keys(user.name)
 
     def input_email(self, user: User):
         browser.element('[type="email"]').clear().send_keys(user.email)
@@ -27,7 +29,9 @@ class CartPage:
 
     def create_order(self, user: User):
         self.input_name(user)
+        time.sleep(1)
         self.input_email(user)
+        time.sleep(1)
         self.input_phone(user)
         self.select_payment_type()
 

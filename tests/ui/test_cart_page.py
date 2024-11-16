@@ -8,4 +8,4 @@ def test_create_order(add_item_to_cart):
     buyer = user_info.alex
     cart_page.open()
     cart_page.create_order(buyer)
-    time.sleep(5)
+    time.sleep(7)
