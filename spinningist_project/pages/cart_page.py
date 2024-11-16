@@ -26,9 +26,9 @@ class CartPage:
         ).click()
 
     def create_order(self, user: User):
-        self.input_name(user.name)
-        self.input_email(user.email)
-        self.input_phone(user.phone)
+        self.input_name(user)
+        self.input_email(user)
+        self.input_phone(user)
         self.select_payment_type()
 
 

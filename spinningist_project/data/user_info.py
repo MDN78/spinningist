@@ -11,7 +11,7 @@ class User:
     additional_information: str
 
 
-Alex = User(
+alex = User(
     name='Evlampy',
     email='test@yandex.ru',
     phone='9253343434',
