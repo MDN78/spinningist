@@ -18,7 +18,7 @@
 
 ### <img width="3%" title="pc" src="assets/pc.jpg"> Local start UI and API tests  
 1) Download project and open in IDE
-2) Create file `.env` and add dates for tests. Examples in file `.env.examples`
+2) Create file `.env` and add dates for tests. Examples dates in file `.env.examples`
 3) Execute command:
 
 ```commandline
