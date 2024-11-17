@@ -4,9 +4,16 @@
 > [site SPINNINGIST](https://spinningist.ru/)  
 
 #### Checks list:  
+##### UI tests  
+- [x] authorization registered user
+- [x] authorization unregistered user  
+- [x] test main page  
+- [x] select spinning  
+- [x] add spinning to cart
+- [x] create order  
+- [x] authorization unregistered user
 
-
-
+##### API tests  
 ---- 
 
 ### <img width="3%" title="pc" src="assets/pc.jpg"> Local start UI and API tests  
