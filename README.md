@@ -1,6 +1,6 @@
 ## Test project. UI and API tests. Site 'Spinningist.ru'  
 ![image](assets/main_page.PNG)   
-> A website for the sale of goods for fishermen and tourists.
+> A website for the sale of goods for fishermen and tourists.  
 > [site SPINNINGIST](https://spinningist.ru/)  
 
 #### Checks list:  
