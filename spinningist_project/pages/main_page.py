@@ -9,7 +9,14 @@ class MainPage:
     def select_delivery_menu(self):
         browser.element('[class="nav-menu__item"]').click()
 
-    def main_page_should_have_text(self):
+    def delivery_menu_should_have_text(self):
         browser.element('[class="b-cmall-page-name text-left"]').should(have.text('ДОСТАВКА'))
+
+    def select_payment_menu(self):
+        browser.element('[href="payment"]').click()
+
+    def payment_block_should_have_text(self):
+        browser.element('[class="b-cmall-page-name text-left"]').should(have.text('ОПЛАТА'))
+
 
 main_page = MainPage()
