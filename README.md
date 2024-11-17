@@ -12,8 +12,14 @@
 ### <img width="3%" title="pc" src="assets/pc.jpg"> Local start UI and API tests  
 1) Download project and opened in IDE
 2) Create file `.env` and add dates for tests. Examples in file `.env.examples`
-2) Execute command:
+3) Execute command:
 
 ```commandline
 pytest 
-```
+```  
+4) Execute the requests to generate allure report.  
+   note: command for Windows
+
+```commandline
+allure serve
+```  
