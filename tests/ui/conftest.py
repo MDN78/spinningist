@@ -1,27 +1,18 @@
 import os
-import pytest
 import allure
+import pytest
+import requests
 from selene import browser
 from utilites import attach
 from selenium import webdriver
 from dotenv import load_dotenv
-import requests
+
 
 
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
     load_dotenv()
 
-def get_auth_cookie():
-    user_agent = {'User-agent': 'Mozilla/5.0'}
-    url = os.getenv('API_URL')
-    username = os.getenv('LOGIN')
-    password = os.getenv('PASSWORD')
-    response = requests.post(url=url, headers=user_agent,
-                                 data={'modlink': 'members', 'username': username, 'password': password},
-                                 allow_redirects=False)
-    cookie = response.cookies.get('session_')
-    return cookie
 
 
 @pytest.fixture(scope="function", autouse=True)
@@ -32,8 +23,7 @@ def auth_driver_configuration():
     browser.config.window_width = 1920
     browser.config.window_height = 1080
     browser.config.base_url = "https://spinningist.ru"
-    # token = os.getenv('TOKEN')
-    token = get_auth_cookie()
+    token = os.getenv('TOKEN')
 
     cookie = {
         "name": "session_",
@@ -63,8 +53,7 @@ def auth_driver_configuration():
 @pytest.fixture()
 def add_item_to_cart():
     url = "https://spinningist.ru/"
-    token = get_auth_cookie()
-    # token = os.getenv('TOKEN')
+    token = os.getenv('TOKEN')
     payload = {
         'modlink': 'buy/2Fspinningi/2Fmaximus/2Fwinner-x/2Fudilische-spin-maximus-winner-x-27866',
         'itemId': '27866',
