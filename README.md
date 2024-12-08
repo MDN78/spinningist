@@ -50,5 +50,5 @@ Special detail report with all steps, screenshots, logs.
 
 
 
-### <img width="3%" title="Telegramm" src="assets/tg.png"> Получение уведомлений о прохождении тестов в Telegram  
-Special report about tests in Telegramm.  
+### <img width="3%" title="Telegramm" src="assets/tg.png"> Telegram report  
+Special report about tests in Telegram.  
