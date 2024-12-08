@@ -3,7 +3,7 @@
 > A website for the sale of goods for fishermen and tourists.  
 > [site SPINNINGIST.RU](https://spinningist.ru/)  
 
-### Проект реализован с использованием:  
+### Project used:  
 <p  align="left">
 <code><img width="5%" title="python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"></code>
 <code><img width="5%" title="pytest" src="https://github.com/MDN78/MDN78/blob/main/assets/pytest.png"></code>
