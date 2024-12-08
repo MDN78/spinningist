@@ -7,11 +7,11 @@
 ##### UI tests  
 - [x] authorization registered user
 - [x] authorization unregistered user  
-- [x] test main page  
+- [x] test delivery manu
+- [x] test payment menu
 - [x] select spinning  
 - [x] add spinning to cart
 - [x] create order  
-- [x] authorization unregistered user
 
 ##### API tests  
 ---- 
