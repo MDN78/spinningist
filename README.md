@@ -45,3 +45,10 @@ pytest
 allure serve
 ```  
 
+### <img width="3%" title="Allure" src="assets/allure_report.png"> Allure report  
+Special detail report with all steps, screenshots, logs.  
+
+
+
+### <img width="3%" title="Telegramm" src="assets/tg.png"> Получение уведомлений о прохождении тестов в Telegram  
+Special report about tests in Telegramm.  
