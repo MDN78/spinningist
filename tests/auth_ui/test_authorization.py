@@ -11,7 +11,7 @@ def test_authorization_registered_user():
     registration_page.registration(login, password)
     registration_page.should_have_registered_user()
 
-
+@allure.tag('Spinningist')
 def test_authorization_unregistered_user():
     login = os.getenv('UNREGISTERED_LOGIN')
     password = os.getenv('UNREGISTERED_PASSWORD')
