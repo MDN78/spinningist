@@ -2,7 +2,7 @@ import time
 from selene import browser, have, be
 from spinningist_project.data.user_info import User
 from selene.core import command
-
+from utilites.logger import Logger
 
 class CartPage:
 
@@ -34,12 +34,14 @@ class CartPage:
         browser.element('[class="eshop-ordering__submit eshop-ordering__submit_action_order btn eshop-ordering__submit_orig"]').should(be.hidden)
 
     def create_order(self, user: User):
+        Logger.add_start_step(method='create order')
         self.input_name(user)
         self.input_email(user)
         self.input_phone(user)
         self.select_payment_type()
         self.selec_delivery_type()
         self.turn_of_policy()
+        Logger.add_end_step(url=browser.driver.current_url, method='create order')
 
 
 cart_page = CartPage()
