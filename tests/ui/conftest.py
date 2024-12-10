@@ -6,7 +6,7 @@ from selene import browser
 from utilites import attach
 from selenium import webdriver
 from dotenv import load_dotenv
-
+from spinningist_project.api.board_api import board_api
 
 
 
@@ -25,6 +25,7 @@ def auth_driver_configuration():
     browser.config.window_width = 1920
     browser.config.window_height = 1080
     browser.config.base_url = "https://spinningist.ru"
+    # token = board_api.get_auth_cookie()
     token = os.getenv('TOKEN')
 
     cookie = {
